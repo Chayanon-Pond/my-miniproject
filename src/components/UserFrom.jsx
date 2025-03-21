@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { RefreshCcw, Send } from "lucide-react";
 const UserFrom = ({ onSubmit }) => {
   const [formValues, setFormValues] = useState({
     name: "",
@@ -71,10 +72,10 @@ const UserFrom = ({ onSubmit }) => {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className="form-containers" onSubmit={handleSubmit}>
       {/* box-name */}
       <div>
-        <label className="form-label">
+        <label className="block text-gray-700 font-medium mb-1">
           ชื่อ <span className="text-red-500">*</span>
         </label>
         <input
@@ -83,14 +84,14 @@ const UserFrom = ({ onSubmit }) => {
           value={formValues.name}
           onChange={handleChange}
           placeholder="กรุณากรอกชื่อของคุณ"
-          className="form-input"
+          className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
         {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
       </div>
 
       {/* box-email */}
       <div>
-        <label className="form-label">
+        <label className="block text-gray-700 font-medium mb-1">
           อีเมล <span className="text-red-500">*</span>
         </label>
         <input
@@ -99,18 +100,18 @@ const UserFrom = ({ onSubmit }) => {
           value={formValues.email}
           onChange={handleChange}
           placeholder="example@email.com"
-          className="form-input"
+          className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
         />
         {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
       </div>
       {/* box-movie */}
-      <div>
-        <label className="form-label">
+      <div className="mt-5">
+        <label className="block text-gray-700 font-medium mb-1">
           เลือกหนังที่คุณชอบ <span className="text-red-500">*</span>
         </label>
         <div className="space-y-2">
           {movies.map((movie) => (
-            <div key={movie.id} className="form-radio-group">
+            <div key={movie.id} className="flex items-start space-x-2">
               <input
                 type="radio"
                 name="movie"
@@ -118,14 +119,14 @@ const UserFrom = ({ onSubmit }) => {
                 id={`movie-${movie.id}`}
                 checked={formValues.movie === movie.title}
                 onChange={handleChange}
-                className="form-radio"
+                className="mt-1"
               />
-              <label htmlFor={`movie-${movie.id}`} className="form-radio-label">
-                <span className="form-radio-title">
+              <label htmlFor={`movie-${movie.id}`} className="text-gray-700">
+                <span className="font-medium">
                   {movie.title} ({movie.year})
                 </span>
                 <br />
-                <span className="form-radio-director">
+                <span className="text-sm text-gray-500">
                   Director: {movie.director}
                 </span>
               </label>
@@ -136,28 +137,35 @@ const UserFrom = ({ onSubmit }) => {
       </div>
 
       {/* box-comment */}
-      <div>
-        <label className="form-label">ความคิดเห็นเกี่ยวกับหนัง</label>
+      <div className="mt-5">
+        <label className="block text-gray-700 font-medium mb-1">
+          ความคิดเห็นเกี่ยวกับหนัง
+        </label>
         <textarea
           name="comment"
           value={formValues.comment}
           onChange={handleChange}
           placeholder="พิมพ์ความคิดเห็นของคุณที่นี่..."
-          className="form-textarea"
+          className="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
           rows="4"
         ></textarea>
       </div>
 
       {/* box-button */}
-      <div className="form-buttons">
+      <div className="flex justify-between items-center border-t mt-5">
         <button
           type="reset"
-          className="form-reset-button"
+          className="bg-gray-100 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer flex items-center mt-5"
           onClick={handleReset}
         >
+          <RefreshCcw size={15} className="mr-2" />
           รีเซ็ต
         </button>
-        <button type="submit" className="form-submit-button">
+        <button
+          type="submit"
+          className="bg-purple-700 to-indigo-600 text-white px-4 py-2 rounded-md hover:bg-purple-600 flex items-center cursor-pointer mt-5"
+        >
+          <Send size={15} className="mr-2" />
           ส่งแบบสำรวจ
         </button>
       </div>
