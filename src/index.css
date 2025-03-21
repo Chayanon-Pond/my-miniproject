@@ -1,8 +1,80 @@
 @import "tailwindcss";
 
+.napber {
+    @apply   flex-col  container w-1/5 mx-auto mt-10 space-y-1.5 p-6 flex shadow-md;
+}
+
 .hero-container {
-    @apply bg-gradient-to-r from-purple-700 to-indigo-600 text-white p-4 flex items-center container w-1/4 mx-auto mt-10 space-y-1.5 p-6;
+    @apply bg-gradient-to-r from-purple-700 to-indigo-600 text-white p-4 flex items-center  mt-5 space-y-1.5;
 }
 .hero-container h1 {
-    @apply font-bold text-3xl;
+    @apply font-bold text-3xl ml-3;
+}
+
+
+.form-container {
+    @apply max-w-lg mx-auto bg-white p-6 rounded-lg  space-y-4;
+}
+
+.form-label {
+    @apply block text-gray-700 font-medium mb-1;
+}
+
+.form-input {
+    @apply w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500;
+}
+
+.form-radio-group {
+    @apply flex items-start space-x-2;
+}
+
+.form-radio {
+    @apply mt-1;
+}
+
+.form-radio-label {
+    @apply text-gray-700;
+}
+
+.form-radio-title {
+    @apply font-medium;
+}
+
+.form-radio-director {
+    @apply text-sm text-gray-500;
+}
+
+.form-textarea {
+    @apply w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-purple-500;
+}
+
+.form-buttons {
+    @apply flex justify-between items-center;
+}
+
+.form-reset-button {
+    @apply bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300 cursor-pointer;
+}
+
+.form-submit-button {
+    @apply bg-purple-700 to-indigo-600 text-white px-4 py-2 rounded-md hover:bg-purple-600 cursor-pointer;
+}
+.form-container{
+    @apply mt-6;
+}
+.form-head {
+    @apply  bg-green-100 p-6 rounded-lg shadow-md;
+
+}
+.form-content {
+    @apply  text-xl  mb-4 text-green-700;
+}
+.btn-reset {
+    @apply mt-4 bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800 cursor-pointer flex justify-center flex-row ml-12;
+}
+.form-comment {
+    @apply  text-xl  mb-4 border-t-1 mt-5;
+}
+.form-comment p {
+    @apply  mt-5;
 }
