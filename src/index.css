@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+.hero-container {
+    @apply bg-gradient-to-r from-purple-700 to-indigo-600 text-white p-4 flex items-center container w-1/4 mx-auto mt-10 space-y-1.5 p-6;
+}
+.hero-container h1 {
+    @apply font-bold text-3xl;
+}
